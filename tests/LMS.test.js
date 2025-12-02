@@ -53,7 +53,5 @@ await expect(page.locator("//div[@class='flex justify-between gap-4 px-6 py-8']"
 
 //My Learning Center
 
-
- 
 });
 
