@@ -14,6 +14,8 @@ test("Lms", async ({ page }) => {
   await page.waitForLoadState("networkidle");
   //Learning Tab
   const btn1 = page.getByRole("button", { name: "Learning" });
+  await page.waitForLoadState("networkidle");
+
   await expect(btn1).toBeVisible();
   await btn1.click();
 
@@ -51,7 +53,18 @@ test("Lms", async ({ page }) => {
   await page.locator("//div[@class='flex items-center gap-6']//span[@class='flex items-center']").click()
 await expect(page.locator("//div[@class='flex justify-between gap-4 px-6 py-8']")).toBeVisible();
 
-//My Learning Center
+//My Learning Center nav abr
+await expect(
+  page.locator("//nav[@aria-label='Tabs']//button[normalize-space()='Courses']")
+).toBeVisible();
+await expect(
+  page.locator("//nav[@aria-label='Tabs']//button[normalize-space()='My Learning Center']")
+).toBeVisible();
+await expect(
+  page.locator("//nav[@aria-label='Tabs']//button[normalize-space()='Curriculum']")
+).toBeVisible();
+
+
 
 });
 
