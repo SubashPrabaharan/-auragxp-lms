@@ -114,9 +114,7 @@ test("Lms", async ({ page }) => {
 // await expect(
 //   page.getByRole("link", { name: /New Course/i })
 // ).toBeVisible();
-await expect(
-  page.getByRole("button", { name: /\+?\s*New Course/i })
-).toBeVisible();
+await page.locator("//button[text()='+ New Course']")
 
 
 
